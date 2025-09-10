@@ -188,6 +188,27 @@ that it is a RT Kernel.
 
 ![](/RTPatch.PNG)
 
+# Comparing Performance Between Standard OS and RT OS: 
+
+By using the cyclictest package, each OS can be evaluated
+based on their latency readings. Cyclictest will create, 
+prioritize, and awaken threads (scheduled tasks). The threads
+are expected to wake up within set intervals, but they will
+usually be delayed by a bit. This delay is the measured 
+latency for which to evaluate the OS performance. Below are
+general system tests. 
+
+Process for installing cyclictest on ARM/ARM64
+https://zhuanlan.zhihu.com/p/512480007?share_code=12wltdj8oKZfo&utm_psn=1948717590580028944
+
+Testing for an x86 OS and ARM64 (Using cyclictest executable): 
+
+```sh
+./cyclictest --smp -t2 -a 0-1 -d200 -p80
+```
+
+
+
 # Sources 
 
 https://www.intel.com/content/www/us/en/learn/what-is-a-real-time-system.html
